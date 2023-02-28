@@ -1,13 +1,13 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'NAME', defaultValue: params.NAME)
-        String(name: 'Ages', defaultValue: '0' )
+        string(name: 'NAME', defaultValue: ${params.NAME})
+        String(name: 'Ages', defaultValue: ${params.Ages})
     }
     stages {
         stage('Example') {
             steps {
-                sh "python3 myscript.py ${params.NAME} $(params.Ages)"
+                sh "python3 myscript.py params.NAME params.Ages)"
             }
         }
     }
