@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'NAME', defaultValue: params.NAME)
-        String(name: 'Ages', defaultValue: params.Ages)
+        string(name: 'Ages', defaultValue: params.Ages)
     }
     stages {
         stage('Example') {
