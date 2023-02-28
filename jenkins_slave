@@ -1,1 +1,15 @@
 # your Home work
+pipeline {
+    agent any
+    parameters {
+        string(name: 'NAME', defaultValue: 'A'),
+        String(name: 'Ages', defaultValue: '0' )
+    }
+    stages {
+        stage('Example') {
+            steps {
+                sh "python3 myscript.py ${params.NAME} $(params.Ages)"
+            }
+        }
+    }
+}
