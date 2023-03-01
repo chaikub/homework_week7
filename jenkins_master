@@ -15,10 +15,10 @@ pipeline {
                 def file = readFile "./name.txt"
                 def lines = file.readLines()[0].split(' ')
                 env.name = lines[0]
-                env.ages = lines[1]
+                env.age = lines[1]
             }
                 echo 'Start Trigger to send name and age to slave'
-                build job: 'slave', parameters: [string(name: 'name', value: '$name'), string(name: 'age', value: '$ages')]
+                build job: 'slave', parameters: [string(name: 'name', value: '$name'), string(name: 'age', value: '$age')]
             }
         }
     }
